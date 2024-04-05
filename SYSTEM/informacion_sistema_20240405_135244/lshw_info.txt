@@ -1,0 +1,440 @@
+lasso
+    descripción: Computer
+    anchura: 64 bits
+    capacidades: smp vsyscall32
+  *-core
+       descripción: Motherboard
+       id físico: 0
+     *-memory
+          descripción: Memoria de sistema
+          id físico: 0
+          tamaño: 15GiB
+     *-cpu
+          producto: 12th Gen Intel(R) Core(TM) i5-12450H
+          fabricante: Intel Corp.
+          id físico: 1
+          información del bus: cpu@0
+          versión: 6.154.3
+          tamaño: 4400MHz
+          capacidad: 4400MHz
+          anchura: 64 bits
+          capacidades: fpu fpu_exception wp vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp x86-64 constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb intel_pt sha_ni xsaveopt xsavec xgetbv1 xsaves split_lock_detect avx_vnni dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req hfi vnmi umip pku ospke waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64b fsrm md_clear serialize arch_lbr ibt flush_l1d arch_capabilities cpufreq
+          configuración: microcode=1072
+     *-pci
+          descripción: Host bridge
+          producto: 12th Gen Core Processor Host Bridge/DRAM Registers
+          fabricante: Intel Corporation
+          id físico: 100
+          información del bus: pci@0000:00:00.0
+          versión: 02
+          anchura: 32 bits
+          reloj: 33MHz
+        *-display
+             descripción: VGA compatible controller
+             producto: Alder Lake-P GT1 [UHD Graphics]
+             fabricante: Intel Corporation
+             id físico: 2
+             información del bus: pci@0000:00:02.0
+             nombre lógico: /dev/fb0
+             versión: 0c
+             anchura: 64 bits
+             reloj: 33MHz
+             capacidades: vga_controller bus_master cap_list rom fb
+             configuración: depth=32 driver=i915 latency=0 resolution=1920,1080
+             recursos: iomemory:600-5ff iomemory:400-3ff irq:157 memoria:6000000000-6000ffffff memoria:4000000000-400fffffff ioport:3000(size=64) memoria:c0000-dffff memoria:4010000000-4016ffffff memoria:4020000000-40ffffffff
+        *-generic:0
+             descripción: Signal processing controller
+             producto: Alder Lake Innovation Platform Framework Processor Participant
+             fabricante: Intel Corporation
+             id físico: 4
+             información del bus: pci@0000:00:04.0
+             versión: 02
+             anchura: 64 bits
+             reloj: 33MHz
+             capacidades: bus_master cap_list
+             configuración: driver=proc_thermal_pci latency=0
+             recursos: iomemory:600-5ff irq:156 memoria:6001100000-600111ffff
+        *-pci:0
+             descripción: PCI bridge
+             producto: 12th Gen Core Processor PCI Express x4 Controller #0
+             fabricante: Intel Corporation
+             id físico: 6
+             información del bus: pci@0000:00:06.0
+             versión: 02
+             anchura: 32 bits
+             reloj: 33MHz
+             capacidades: pci normal_decode bus_master cap_list
+             configuración: driver=pcieport
+             recursos: irq:122 memoria:50500000-505fffff
+           *-nvme
+                descripción: NVMe device
+                producto: Micron MTFDKCD1T0QFM-1BD1AABLA
+                fabricante: Micron Technology Inc
+                id físico: 0
+                información del bus: pci@0000:01:00.0
+                nombre lógico: /dev/nvme0
+                versión: 1002V3LN
+                serie: 233142687B47
+                anchura: 64 bits
+                reloj: 33MHz
+                capacidades: nvme nvm_express bus_master cap_list
+                configuración: driver=nvme latency=0 nqn=nqn.2016-08.com.micron:nvme:nvm-subsystem-sn-233142687B47 state=live
+                recursos: irq:16 memoria:50500000-50503fff
+              *-namespace:0
+                   descripción: NVMe disk
+                   id físico: 0
+                   nombre lógico: hwmon3
+              *-namespace:1
+                   descripción: NVMe disk
+                   id físico: 2
+                   nombre lógico: /dev/ng0n1
+              *-namespace:2
+                   descripción: NVMe disk
+                   id físico: 1
+                   información del bus: nvme@0:1
+                   nombre lógico: /dev/nvme0n1
+                   configuración: wwid=eui.000000000000000100a0752342687b47
+        *-generic:1 NO RECLAMADO
+             descripción: System peripheral
+             producto: 12th Gen Core Processor Gaussian & Neural Accelerator
+             fabricante: Intel Corporation
+             id físico: 8
+             información del bus: pci@0000:00:08.0
+             versión: 02
+             anchura: 64 bits
+             reloj: 33MHz
+             capacidades: bus_master cap_list
+             configuración: latency=0
+             recursos: iomemory:600-5ff memoria:6001153000-6001153fff
+        *-generic:2
+             descripción: Signal processing controller
+             producto: Platform Monitoring Technology
+             fabricante: Intel Corporation
+             id físico: a
+             información del bus: pci@0000:00:0a.0
+             versión: 01
+             anchura: 64 bits
+             reloj: 33MHz
+             capacidades: cap_list
+             configuración: driver=intel_vsec latency=0
+             recursos: iomemory:600-5ff irq:0 memoria:6001130000-6001137fff
+        *-usb:0
+             descripción: USB controller
+             producto: Alder Lake-P Thunderbolt 4 USB Controller
+             fabricante: Intel Corporation
+             id físico: d
+             información del bus: pci@0000:00:0d.0
+             versión: 02
+             anchura: 64 bits
+             reloj: 33MHz
+             capacidades: xhci bus_master cap_list
+             configuración: driver=xhci_hcd latency=0
+             recursos: iomemory:600-5ff irq:125 memoria:6001120000-600112ffff
+        *-usb:1
+             descripción: USB controller
+             producto: Alder Lake PCH USB 3.2 xHCI Host Controller
+             fabricante: Intel Corporation
+             id físico: 14
+             información del bus: pci@0000:00:14.0
+             versión: 01
+             anchura: 64 bits
+             reloj: 33MHz
+             capacidades: xhci bus_master cap_list
+             configuración: driver=xhci_hcd latency=0
+             recursos: irq:126 memoria:50600000-5060ffff
+        *-memory NO RECLAMADO
+             descripción: RAM memory
+             producto: Alder Lake PCH Shared SRAM
+             fabricante: Intel Corporation
+             id físico: 14.2
+             información del bus: pci@0000:00:14.2
+             versión: 01
+             anchura: 64 bits
+             reloj: 33MHz (30.3ns)
+             capacidades: bus_master cap_list
+             configuración: latency=0
+             recursos: iomemory:600-5ff iomemory:600-5ff memoria:6001148000-600114bfff memoria:6001152000-6001152fff
+        *-network
+             descripción: Interfaz inalámbrica
+             producto: Alder Lake-P PCH CNVi WiFi
+             fabricante: Intel Corporation
+             id físico: 14.3
+             información del bus: pci@0000:00:14.3
+             nombre lógico: wlp0s20f3
+             versión: 01
+             serie: a0:02:a5:6b:63:0e
+             anchura: 64 bits
+             reloj: 33MHz
+             capacidades: bus_master cap_list ethernet physical wireless
+             configuración: broadcast=yes driver=iwlwifi driverversion=6.5.0-26-generic firmware=83.e8f84e98.0 so-a0-hr-b0-83.uc ip=192.168.1.24 latency=0 link=yes multicast=yes wireless=IEEE 802.11
+             recursos: iomemory:600-5ff irq:16 memoria:6001144000-6001147fff
+        *-serial:0
+             descripción: Serial bus controller
+             producto: Alder Lake PCH Serial IO I2C Controller #0
+             fabricante: Intel Corporation
+             id físico: 15
+             información del bus: pci@0000:00:15.0
+             versión: 01
+             anchura: 64 bits
+             reloj: 33MHz
+             capacidades: bus_master cap_list
+             configuración: driver=intel-lpss latency=0
+             recursos: irq:27 memoria:4017000000-4017000fff
+        *-serial:1
+             descripción: Serial bus controller
+             producto: Alder Lake PCH Serial IO I2C Controller #1
+             fabricante: Intel Corporation
+             id físico: 15.1
+             información del bus: pci@0000:00:15.1
+             versión: 01
+             anchura: 64 bits
+             reloj: 33MHz
+             capacidades: bus_master cap_list
+             configuración: driver=intel-lpss latency=0
+             recursos: irq:40 memoria:4017001000-4017001fff
+        *-communication:0
+             descripción: Communication controller
+             producto: Alder Lake PCH HECI Controller
+             fabricante: Intel Corporation
+             id físico: 16
+             información del bus: pci@0000:00:16.0
+             versión: 01
+             anchura: 64 bits
+             reloj: 33MHz
+             capacidades: bus_master cap_list
+             configuración: driver=mei_me latency=0
+             recursos: iomemory:600-5ff irq:141 memoria:600114f000-600114ffff
+        *-pci:1
+             descripción: PCI bridge
+             producto: Alder Lake PCH-P PCI Express Root Port #9
+             fabricante: Intel Corporation
+             id físico: 1c
+             información del bus: pci@0000:00:1c.0
+             versión: 01
+             anchura: 32 bits
+             reloj: 33MHz
+             capacidades: pci normal_decode bus_master cap_list
+             configuración: driver=pcieport
+             recursos: irq:123 memoria:50400000-504fffff
+           *-generic
+                descripción: MMC Host
+                producto: RTS522A PCI Express Card Reader
+                fabricante: Realtek Semiconductor Co., Ltd.
+                id físico: 0
+                información del bus: pci@0000:02:00.0
+                nombre lógico: mmc0
+                versión: 01
+                anchura: 32 bits
+                reloj: 33MHz
+                capacidades: bus_master cap_list
+                configuración: driver=rtsx_pci latency=0
+                recursos: irq:124 memoria:50400000-50400fff
+        *-communication:1
+             descripción: Communication controller
+             producto: Alder Lake PCH UART #0
+             fabricante: Intel Corporation
+             id físico: 1e
+             información del bus: pci@0000:00:1e.0
+             versión: 01
+             anchura: 64 bits
+             reloj: 33MHz
+             capacidades: bus_master cap_list
+             configuración: driver=intel-lpss latency=0
+             recursos: irq:16 memoria:4017002000-4017002fff
+        *-serial:2
+             descripción: Serial bus controller
+             producto: Intel Corporation
+             fabricante: Intel Corporation
+             id físico: 1e.3
+             información del bus: pci@0000:00:1e.3
+             versión: 01
+             anchura: 64 bits
+             reloj: 33MHz
+             capacidades: bus_master cap_list
+             configuración: driver=intel-lpss latency=0
+             recursos: irq:37 memoria:4017003000-4017003fff
+        *-isa
+             descripción: ISA bridge
+             producto: Alder Lake PCH eSPI Controller
+             fabricante: Intel Corporation
+             id físico: 1f
+             información del bus: pci@0000:00:1f.0
+             versión: 01
+             anchura: 32 bits
+             reloj: 33MHz
+             capacidades: isa bus_master
+             configuración: latency=0
+           *-pnp00:00
+                producto: PnP device PNP0c02
+                id físico: 0
+                capacidades: pnp
+                configuración: driver=system
+           *-pnp00:01
+                producto: PnP device PNP0c02
+                id físico: 1
+                capacidades: pnp
+                configuración: driver=system
+           *-pnp00:02
+                producto: PnP device PNP0303
+                id físico: 2
+                capacidades: pnp
+                configuración: driver=i8042 kbd
+           *-pnp00:03
+                producto: PnP device PNP0c02
+                id físico: 3
+                capacidades: pnp
+                configuración: driver=system
+           *-pnp00:04
+                producto: PnP device PNP0c02
+                id físico: 4
+                capacidades: pnp
+                configuración: driver=system
+           *-pnp00:05
+                producto: PnP device PNP0c02
+                id físico: 5
+                capacidades: pnp
+                configuración: driver=system
+           *-input
+                producto: Ideapad extra buttons
+                id físico: 6
+                nombre lógico: input9
+                nombre lógico: /dev/input/event3
+                capacidades: platform
+        *-multimedia
+             descripción: Multimedia audio controller
+             producto: Alder Lake PCH-P High Definition Audio Controller
+             fabricante: Intel Corporation
+             id físico: 1f.3
+             información del bus: pci@0000:00:1f.3
+             nombre lógico: card0
+             nombre lógico: /dev/snd/controlC0
+             nombre lógico: /dev/snd/hwC0D0
+             nombre lógico: /dev/snd/hwC0D2
+             nombre lógico: /dev/snd/pcmC0D0c
+             nombre lógico: /dev/snd/pcmC0D0p
+             nombre lógico: /dev/snd/pcmC0D3p
+             nombre lógico: /dev/snd/pcmC0D7p
+             nombre lógico: /dev/snd/pcmC0D8p
+             nombre lógico: /dev/snd/pcmC0D9p
+             versión: 01
+             anchura: 64 bits
+             reloj: 33MHz
+             capacidades: bus_master cap_list
+             configuración: driver=snd_hda_intel latency=32
+             recursos: iomemory:600-5ff iomemory:600-5ff irq:158 memoria:6001140000-6001143fff memoria:6001000000-60010fffff
+           *-input:0
+                producto: HDA Intel PCH Mic
+                id físico: 0
+                nombre lógico: input14
+                nombre lógico: /dev/input/event10
+           *-input:1
+                producto: HDA Intel PCH Headphone
+                id físico: 1
+                nombre lógico: input15
+                nombre lógico: /dev/input/event11
+           *-input:2
+                producto: HDA Intel PCH HDMI/DP,pcm=3
+                id físico: 2
+                nombre lógico: input16
+                nombre lógico: /dev/input/event12
+           *-input:3
+                producto: HDA Intel PCH HDMI/DP,pcm=7
+                id físico: 3
+                nombre lógico: input17
+                nombre lógico: /dev/input/event13
+           *-input:4
+                producto: HDA Intel PCH HDMI/DP,pcm=8
+                id físico: 4
+                nombre lógico: input18
+                nombre lógico: /dev/input/event14
+           *-input:5
+                producto: HDA Intel PCH HDMI/DP,pcm=9
+                id físico: 5
+                nombre lógico: input19
+                nombre lógico: /dev/input/event15
+        *-serial:3
+             descripción: SMBus
+             producto: Alder Lake PCH-P SMBus Host Controller
+             fabricante: Intel Corporation
+             id físico: 1f.4
+             información del bus: pci@0000:00:1f.4
+             versión: 01
+             anchura: 64 bits
+             reloj: 33MHz
+             configuración: driver=i801_smbus latency=0
+             recursos: iomemory:600-5ff irq:16 memoria:600114c000-600114c0ff ioport:efa0(size=32)
+        *-serial:4
+             descripción: Serial bus controller
+             producto: Alder Lake-P PCH SPI Controller
+             fabricante: Intel Corporation
+             id físico: 1f.5
+             información del bus: pci@0000:00:1f.5
+             versión: 01
+             anchura: 32 bits
+             reloj: 33MHz
+             capacidades: bus_master
+             configuración: driver=intel-spi latency=0
+             recursos: irq:0 memoria:50610000-50610fff
+  *-input:0
+       producto: Lid Switch
+       id físico: 1
+       nombre lógico: input0
+       nombre lógico: /dev/input/event0
+       capacidades: platform
+  *-input:1
+       producto: Power Button
+       id físico: 2
+       nombre lógico: input1
+       nombre lógico: /dev/input/event1
+       capacidades: platform
+  *-input:2
+       producto: ELAN06FA:00 04F3:32B9 Mouse
+       id físico: 3
+       nombre lógico: input10
+       nombre lógico: /dev/input/event4
+       nombre lógico: /dev/input/mouse0
+       capacidades: i2c
+  *-input:3
+       producto: ELAN06FA:00 04F3:32B9 Touchpad
+       id físico: 4
+       nombre lógico: input12
+       nombre lógico: /dev/input/event8
+       nombre lógico: /dev/input/mouse1
+       capacidades: i2c
+  *-input:4
+       producto: Video Bus
+       id físico: 5
+       nombre lógico: input13
+       nombre lógico: /dev/input/event9
+       capacidades: platform
+  *-input:5
+       producto: AT Translated Set 2 keyboard
+       id físico: 6
+       nombre lógico: input2
+       nombre lógico: /dev/input/event2
+       nombre lógico: input2::capslock
+       nombre lógico: input2::numlock
+       nombre lógico: input2::scrolllock
+       capacidades: i8042
+  *-input:6
+       producto: SteelSeries SteelSeries Aerox 3 Wireless
+       id físico: 7
+       nombre lógico: input20
+       nombre lógico: /dev/input/event5
+       nombre lógico: /dev/input/mouse2
+       capacidades: usb
+  *-input:7
+       producto: SteelSeries SteelSeries Aerox 3 Wireless
+       id físico: 8
+       nombre lógico: input21
+       nombre lógico: /dev/input/event6
+       nombre lógico: input21::capslock
+       nombre lógico: input21::numlock
+       nombre lógico: input21::scrolllock
+       capacidades: usb
+  *-input:8
+       producto: SteelSeries SteelSeries Aerox 3 Wireless
+       id físico: 9
+       nombre lógico: input22
+       nombre lógico: /dev/input/event7
+       capacidades: usb

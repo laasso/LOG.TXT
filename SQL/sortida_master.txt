@@ -1,0 +1,19 @@
+*************************** 1. row ***************************
+             File: mysql-bin.000035
+         Position: 1520
+     Binlog_Do_DB: empleats
+ Binlog_Ignore_DB: 
+Executed_Gtid_Set: 
+*************************** 1. row ***************************
+Variable_name: server_uuid
+        Value: 0138954a-5e12-11ee-bd28-08002737b1eb
+*************************** 1. row ***************************
+     Id: 10
+   User: root
+   Host: localhost
+     db: NULL
+Command: Query
+   Time: 0
+  State: init
+   Info: SHOW FULL PROCESSLIST
+

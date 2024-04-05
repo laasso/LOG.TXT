@@ -1,0 +1,9 @@
+S.ficheros     Tamaño Usados  Disp Uso% Montado en
+tmpfs            1,6G   2,7M  1,6G   1% /run
+/dev/nvme0n1p5   348G    96G  235G  29% /
+tmpfs            7,7G    91M  7,6G   2% /dev/shm
+tmpfs            5,0M   4,0K  5,0M   1% /run/lock
+efivarfs         268K   166K   98K  63% /sys/firmware/efi/efivars
+/dev/nvme0n1p1   256M    45M  212M  18% /boot/efi
+tmpfs            1,6G   116K  1,6G   1% /run/user/1000
+/dev/nvme0n1p3   598G   189G  409G  32% /media/lasso/Windows-SSD
